@@ -40,6 +40,17 @@ For a given convex maximization instance, the file ```approximate.m``` solves th
 
 Details of ```approximate.m```: To obtain an upper bound it solves problem (10) of the paper, and the lower bound solution is proposed in the statement of Corollary 1. The upper bound value and solution are saved as "UB solution", and the lower bound value and solution are saved as "LB solution". 
 
+**Section 4.2 - logsumexp over infnorm**
+_TBA_
+
+**Section 4.3 - quadratic over polyhedron**
+_TBA_
+
+**Section 4.4 - logsumexp over polyhedron**
+_TBA_
+
+**Section 4.5 - sumofmax over polyhedron**
+_TBA_
 ## Final Notes
 The following scripts are also available upon request:
 - Implementation of an algorithm to solve the upper bound problem, i.e., [The Adversarial Approach](https://www.sciencedirect.com/science/article/pii/S1572528607000382), which is useful when the perspective function is hard to optimize in the UB problem
