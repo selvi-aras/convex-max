@@ -1,0 +1,1 @@
+Divide UB/2 and add 40 as the objective function is also divided by 2 and a constant of 40 is added
