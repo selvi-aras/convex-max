@@ -1,0 +1,3 @@
+The upper bound value is unique as it is obtained by solving a single problem.
+However, there are typically multiple alternative optima in the UB problem and/or the scenarios for the LB. 
+This impacts the quality of the lower bound solution. Hence, the solver, or solver version may change the LB quality.
