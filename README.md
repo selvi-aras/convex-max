@@ -14,18 +14,18 @@ This repository provides the following:
 ## Dependencies
 **MATLAB** - We use MATLAB 2018b to run the scripts. The scripts are compatible with the [latest release](https://uk.mathworks.com/downloads/) 2021a of MATLAB.
 
-**YALMIP** - We use [YALMIP](https://yalmip.github.io/download/) to call optimization solvers. The code is compatible with the [latest release](https://github.com/yalmip/YALMIP/releases/tag/R20210331) (as of 1 September 2021) R20210331 of YALMIP. As a minimum requirement, YALMIP R20181012 is required (for the support of exponential cone modeling). 
+**YALMIP** - We use [YALMIP](https://yalmip.github.io/download/) to call optimization solvers. The scripts are compatible with the [latest release](https://github.com/yalmip/YALMIP/releases/tag/R20210331) (as of 1 September 2021) R20210331 of YALMIP. As a minimum requirement, YALMIP R20181012 is needed (for the support of exponential cone modeling). 
 
-**MOSEK** -  Version >= 9.0 is required for exponential cone optimization purposes. The code is compatible with the [latest release](https://www.mosek.com/documentation/) (as of 1 September 2021) 
+**MOSEK** -  Version >= 9.0 is required for exponential cone optimization purposes. The scripts are compatible with the [latest release](https://www.mosek.com/documentation/) (as of 1 September 2021) 
 
-**CPLEX** - Version >= 12.6 is required to solve nonconvex quadratic problems (for benchmark purposes). The code is compatible with [version 12.10](https://www.ibm.com/support/pages/downloading-ibm-ilog-cplex-optimization-studio-v12100). Note that the most recent version (as of 1 September 2021) 20.1 does not come with a MATLAB connector with anymore. 
+**CPLEX** - Version >= 12.6 is required to solve nonconvex quadratic problems (for benchmark purposes). The scripts are compatible with [version 12.10](https://www.ibm.com/support/pages/downloading-ibm-ilog-cplex-optimization-studio-v12100). Note that the most recent version (as of 1 September 2021) 20.1 does not come with a MATLAB connector with anymore. 
 
-**GUROBI** - Version >= 9.0 is used, and the code is compatible with the [latest release 9.1](https://www.gurobi.com/) (as of 1 September 2021). We use GUROBI to solve mixed integer linear optimization problems.
+**GUROBI** - Version >= 9.0 is used, and the scripts are compatible with the [latest release 9.1](https://www.gurobi.com/) (as of 1 September 2021). We use GUROBI to solve mixed integer linear optimization problems.
 
-Moreover, although our upper/lower bound approximation algorithms only use the solvers mentioned above, we also compared our solutions with the solutions obtained by directly solving the original convex maximization problem with various solvers such as [BARON](https://minlp.com/download), [Artelys KNITRO](https://www.artelys.com/solvers/knitro/), [COIN-OR IPOPT](https://coin-or.github.io/Ipopt/), and [BMIBNB](https://yalmip.github.io/solver/bmibnb/). Please reach out to me (a.selvi19@imperial.ac.uk) for any question about using these solvers for global optimization.
+Moreover, although our upper/lower bound approximation algorithms only use the solvers mentioned above, we also compared our solutions with the solutions obtained by directly solving the original convex maximization problem with various solvers such as [BARON](https://minlp.com/download), [Artelys KNITRO](https://www.artelys.com/solvers/knitro/), [COIN-OR IPOPT](https://coin-or.github.io/Ipopt/), and [BMIBNB](https://yalmip.github.io/solver/bmibnb/). Please reach out to Aras (a.selvi19@imperial.ac.uk) for any question about using these solvers for global optimization.
 
 ## Description
-The following is a guide to use this repository. Note that all data files are in ".mat" format (documentation available [here](https://www.mathworks.com/help/pdf_doc/matlab/matfile_format.pdf)). All the scripts are in ".m" format (MATLAB script files). In some folders there are ".txt" files just to comment on some implementation (not important).
+The following is a guide to use this repository. Note that all data files are in ".mat" format (data file used by MATLAB, documentation available [here](https://www.mathworks.com/help/pdf_doc/matlab/matfile_format.pdf)). All the scripts are in ".m" format (MATLAB script files). In some folders there are ".txt" files just to comment on some implementations (not important).
 
 The folders are summarized below:
 
@@ -34,14 +34,23 @@ This folder is about the problem of maximizing a log-sum-exp (geometric) functio
 
 The file ```Generate_Data.m``` generates an example problem, where one can see how we name the variables that define the convex maximization problem (```n```, ```m```, ```A```, ```b```, ```rho```, ```a```). This is how we construct instances of the convex maximization problem.
 
-The numerical experiments of the paper (Section 4.1) summarize the results of 12 problems whose generation are explained in Appendix G.1. The exact problem data are available in the corresponding sub-folders. For example, data of Problem #1 of the paper can be found under the folder ```P1``` with the name ```P1.mat```. The upper and lower bound results generated by our approximation scheme are also available with names ```UB solution.mat``` and ```LB solution.mat```, respectively.
+The numerical experiments of the paper (Section 4.1) summarize the results of 12 problems whose generation are explained in Appendix G.1. The exact problem data are available in the corresponding sub-folders of this folder. For example, data of Problem #1 of the paper can be found under the folder ```P1``` with the name ```P1.mat```. The upper and lower bound results given by our approximation scheme are also available with the names ```UB solution.mat``` and ```LB solution.mat```, respectively.
 
 For a given convex maximization instance, the file ```approximate.m``` solves the upper and lower bound approximation problems as proposed in Corollary 1 of the paper. The file takes an input ```problem_index```. Setting this to, e.g., "P9", will load ```P9/P9.mat``` and return upper and lower bound approximation results. One can also generate a new instance by modifying ```Generate_Data.m``` and approximate that problem by loading it in the beginning of ```approximate.m```. 
 
-Details of ```approximate.m```: To obtain an upper bound it solves problem (10) of the paper, and the lower bound solution is proposed in the statement of Corollary 1. The upper bound value and solution are saved as "UB solution", and the lower bound value and solution are saved as "LB solution". 
+Details of ```approximate.m```: To obtain an upper bound it solves problem (10) of the paper, and the lower bound solution is proposed in the statement of Corollary 1. The upper bound value and solution are saved as ```UB solution.mat```, and the lower bound value and solution are saved as ```LB solution.mat```. 
 
 **Section 4.2 - logsumexp over infnorm**
-_TBA_
+This folder is about the problem of maximizing a log-sum-exp (geometric) function over a single infinity-norm constraint. In other words, this folder is dedicated to problem (1) of the paper where the objective function is a log-sum-exp function, and the constraint function g(.) is an infinity-norm. 
+
+The file ```Generate_Data.m``` generates an example problem, where one can see how we name the variables that define the convex maximization problem (```n```, ```m```, ```A```, ```b```, ```rho```, ```a```). This is how we construct instances of the convex maximization problem.
+
+The numerical experiments of the paper (Section 4.2) summarize the results of 5 problems whose generation are explained in Appendix G.2. The exact problem data are available in the corresponding sub-folders of this folder. For example, data of Problem #1 of the paper can be found under the folder ```P1``` with the name ```P1.mat```. The data of exact solution our method finds is also available with the name ```Solution.mat```.
+
+For a given convex maximization instance, the file ```approximate.m``` solves the equivalent optimization problem and retrieves the solution that attains it as proposed in Corollary 2 of the paper. The file takes an input ```problem_index```. Setting this to, e.g., "P5", will load ```P5/P5.mat``` and return upper and lower bound approximation results. One can also generate a new instance by modifying ```Generate_Data.m``` and approximate that problem by loading it in the beginning of ```approximate.m```. 
+
+Details of ```approximate.m```: To obtain the global optimum value of the convex maximization problem it solves problem (11) of the paper. The corresponding solution that attains this value in the main problem is obtained by solving the LP proposed in the statement of Corollary 2. The global optimum value, the solution ```w``` of problem (11), and the solution ```x_bar``` that attains this value in the original problem are saves as "Solution.mat".
+
 
 **Section 4.3 - quadratic over polyhedron**
 _TBA_
