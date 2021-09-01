@@ -1,0 +1,6 @@
+The approximation code was previously shorter, and we were using the pexp() function of YALMIP.
+
+However, due to a recent bug of YALMIP, we have updated the code which now uses expcone() constraints instead.
+See here for the bug-fix attempts: https://github.com/yalmip/YALMIP/commit/5b8cc74016b0d3a23c3a9f51b21c722c4ca65ae8#diff-6b836cb4c32aad059e3d60971ed3a1e11d427fa460c78a5ca97bd7cc56e2afdc
+
+The code is still working the same, but previously it was shorter. 
