@@ -51,15 +51,23 @@ For a given convex maximization instance, the file ```approximate.m``` solves th
 
 Details of ```approximate.m```: To obtain the global optimum value of the convex maximization problem it solves problem (11) of the paper. The corresponding solution that attains this value in the main problem is obtained by solving the LP proposed in the statement of Corollary 2. The global optimum value, the solution ```w``` of problem (11), and the solution ```x_bar``` that attains this value in the original problem are saves as "Solution.mat".
 
-
 **Section 4.3 - quadratic over polyhedron**
-_TBA_
+This folder is about the problem of maximizing a convex quadratic function over a polyhedron ```{x | Dx <= d, x >= 0}```. In other words, this folder is dedicated to problem (20) of the paper where the objective function is a convex quadratic function. The problem (including parameter definitions) is summarized in the first row of Table 1 in the paper.
+
+The file ```Generate_Data.m``` generates an example problem, where one can see how we name the variables that define the convex maximization problem (```n```, ```m```, ```q```, ```Q```, ```L```, ```ell```, ```D```, ```d```). This is how we construct instances of the convex maximization problem.
+
+The numerical experiments of the paper (Section 4.3) summarize the results of 7 problems whose generation are explained in Appendix G.3. The exact problem data are available in the corresponding sub-folders of this folder. For example, data of Problem #7 of the paper can be found under the folder ```P7``` with the name ```P7.mat```. The upper and lower bound results given by our approximation scheme are also available with the names ```UB solution.mat``` and ```LB solution.mat```, respectively. The file ```readme.txt``` in folders ```P1``` and ```P2``` notes an extra step needed for Problems #1 and #2.
+
+For a given convex maximization instance, the file ```approximate.m``` solves the upper and lower bound approximation problems as proposed in Theorem 3 and derived explicitly in Appendix D.1. of the paper. The file takes an input ```problem_index```. Setting this to, e.g., "P9", will load ```P9/P9.mat``` and return upper and lower bound approximation results (including the lower bound scenarios). One can also generate a new instance by modifying ```Generate_Data.m``` and approximate that problem by loading it in the beginning of ```approximate.m```. 
+
+Details of ```approximate.m```: To obtain an upper bound it solves the problem described in the first row of Table 2 of the paper. Lower bound scenarios are obtained by using the upper bound solution as summarized in the first row of Table 3, and these scenarios are used to generate candidate lower bound solutions ```x_bar```. The upper bound value and solution are saved as ```UB solution.mat```, and the lower bound value, scenarios, and solutions are saved as ```LB solution.mat```. 
 
 **Section 4.4 - logsumexp over polyhedron**
 _TBA_
 
 **Section 4.5 - sumofmax over polyhedron**
 _TBA_
+
 ## Final Notes
 The following scripts are also available upon request:
 - Implementation of an algorithm to solve the upper bound problem, i.e., [The Adversarial Approach](https://www.sciencedirect.com/science/article/pii/S1572528607000382), which is useful when the perspective function is hard to optimize in the UB problem
