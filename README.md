@@ -71,10 +71,18 @@ The numerical experiments of the paper (Section 4.4) summarize the results of 6 
 
 For a given convex maximization instance, the file ```approximate.m``` solves the upper and lower bound approximation problems as proposed in Theorem 3 and equations (26)-(28), and derived explicitly in Appendix D.2. of the paper. The file takes an input ```problem_index```. Setting this to, e.g., "P4", will load ```P4/P4.mat``` and return upper and lower bound approximation results (including the lower bound scenarios). One can also generate a new instance by modifying ```Generate_Data.m``` and approximate that problem by loading it in the beginning of ```approximate.m```. 
 
-Details of ```approximate.m```: To obtain an upper bound it solves the exponential cone problem described in the second row of Table 2 of the paper. Lower bound scenarios are obtained by using the upper bound solution as summarized in the first row of Table 3, and these scenarios are used to generate candidate lower bound solutions ```x_bar```. The upper bound value and solution are saved as ```UB solution.mat```, and the lower bound value, scenarios, and solutions are saved as ```LB solution.mat```. 
+Details of ```approximate.m```: To obtain an upper bound it solves the exponential cone problem described in the second row of Table 2 of the paper. Lower bound scenarios are obtained by using the upper bound solution as summarized in the second row of Table 3, and these scenarios are used to generate candidate lower bound solutions ```x_bar```. The upper bound value and solution are saved as ```UB solution.mat```, and the lower bound value, scenarios, and solutions are saved as ```LB solution.mat```. 
 
 **Section 4.5 - sumofmax over polyhedron**
-_TBA_
+This folder is about the problem of maximizing a convex quadratic function over a polyhedron ```{x | Dx <= d, x >= 0}```. In other words, this folder is dedicated to problem (20) of the paper where the objective function is a sum-of-max-linear-terms function. The problem (including parameter definitions) is summarized in the third row of Table 1 of the paper.
+
+The file ```Generate_Data.m``` generates an example problem, where one can see how we name the variables that define the convex maximization problem (```n```, ```m```, ```K```, ```J```, ```A```, ```b```, ```D```, ```d```). This is how we construct instances of the convex maximization problem.
+
+The numerical experiments of the paper (Section 4.5) summarize the results of 13 problems whose generation are explained in Appendix G.5. The exact problem data are available in the corresponding sub-folders of this folder. For example, data of Problem #9 of the paper can be found under the folder ```P9``` with the name ```P9.mat```. The upper and lower bound results given by our approximation scheme are also available with the names ```UB solution.mat``` and ```LB solution.mat```, respectively. 
+
+For a given convex maximization instance, the file ```approximate.m``` solves the upper and lower bound approximation problems as proposed in Theorem 3 and equations (26)-(28), and derived explicitly in Appendix D.3. of the paper. The file takes an input ```problem_index```. Setting this to, e.g., "P9", will load ```P9/P9.mat``` and return upper and lower bound approximation results (including the lower bound scenarios). One can also generate a new instance by modifying ```Generate_Data.m``` and approximate that problem by loading it in the beginning of ```approximate.m```. 
+
+Details of ```approximate.m```: To obtain an upper bound it solves the linear optimization problem described in the third row of Table 2 of the paper. Lower bound scenarios are obtained by using the upper bound solution as summarized in the third row of Table 3, and these scenarios are used to generate candidate lower bound solutions ```x_bar```. The upper bound value and solution are saved as ```UB solution.mat```, and the lower bound value, scenarios, and solutions are saved as ```LB solution.mat```. 
 
 ## Final Notes
 The following scripts are also available upon request:
