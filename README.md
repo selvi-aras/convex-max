@@ -102,7 +102,7 @@ The folders are summarized below (click on the relevant Section to get more info
 
 ## Final Notes
 The following scripts are also available upon request:
-- Implementation of an algorithm to solve the upper bound problem, i.e., [The Adversarial Approach](https://www.sciencedirect.com/science/article/pii/S1572528607000382), which is useful when the perspective function is hard to optimize in the UB problem
+- Implementation of an alternative algorithm to solve the upper bound problem, i.e., [The Adversarial Approach](https://www.sciencedirect.com/science/article/pii/S1572528607000382), which is useful when the perspective function is hard to optimize in the UB problem
 - Implementation of the [FME algorithm to eliminate the adjustable variables](https://pubsonline.informs.org/doi/abs/10.1287/opre.2017.1714) in the equivalent ARO problem of the convex maximization problem
 - The global optimization benchmark scripts (i.e., using global optimization solvers to attempt solving the convex maximization problem directly)
 - A branch and bound algorithm where convex maximization over a polyhedron is consecutively being split into smaller regions and our upper/lower bound approximations are applied on each split
