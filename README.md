@@ -73,7 +73,7 @@ The folders are summarized below (click on the relevant Section to get more info
  <details>
   <summary> <b>Section 4.4 - logsumexp over polyhedron </b> </summary>
   
-  This folder is about the problem of maximizing a convex quadratic function over a polyhedron ```{x | Dx <= d, x >= 0}```. In other words, this folder is dedicated to problem (20) of the paper where the objective function is a log-sum-exp (geometric) function. The problem (including parameter definitions) is summarized in the second row of Table 1 of the paper.
+  This folder is about the problem of maximizing a log-sum-exp function over a polyhedron ```{x | Dx <= d, x >= 0}```. In other words, this folder is dedicated to problem (20) of the paper where the objective function is a log-sum-exp (geometric) function. The problem (including parameter definitions) is summarized in the second row of Table 1 of the paper.
 
   The file ```Generate_Data.m``` generates an example problem, where one can see how we name the variables that define the convex maximization problem (```n```, ```m```, ```q```, ```A```, ```b```, ```D```, ```d```). This is how we construct instances of the convex maximization problem.
 
@@ -87,7 +87,7 @@ The folders are summarized below (click on the relevant Section to get more info
  <details>
   <summary> <b>Section 4.5 - sumofmax over polyhedron </b> </summary>
   
-  This folder is about the problem of maximizing a convex quadratic function over a polyhedron ```{x | Dx <= d, x >= 0}```. In other words, this folder is dedicated to problem (20) of the paper where the objective function is a sum-of-max-linear-terms function. The problem (including parameter definitions) is summarized in the third row of Table 1 of the paper.
+  This folder is about the problem of maximizing a sum-of-max-linear-terms function over a polyhedron ```{x | Dx <= d, x >= 0}```. In other words, this folder is dedicated to problem (20) of the paper where the objective function is a sum-of-max-linear-terms function. The problem (including parameter definitions) is summarized in the third row of Table 1 of the paper.
 
   The file ```Generate_Data.m``` generates an example problem, where one can see how we name the variables that define the convex maximization problem (```n```, ```m```, ```K```, ```J```, ```A```, ```b```, ```D```, ```d```). This is how we construct instances of the convex maximization problem.
 
