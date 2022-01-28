@@ -1,7 +1,7 @@
 # convex-max-via-ARO
 Data and codes of the paper _Convex Maximization via Adjustable Robust Optimization_ by _Aras Selvi, Aharon Ben-Tal, Ruud Brekelmans, and Dick den Hertog (2021)_.
 
-The preprint (version of 1 September 2021) is available on [Optimization Online](http://www.optimization-online.org/DB_FILE/2020/07/7881.pdf). The paper is presented at [Robust Optimization Webinars](https://youtu.be/GEGUlTXfVX0) and at [Imperial-LBS-UCL Brown Bag Seminars](https://sites.google.com/view/phdmsorseminars/).
+The preprint (version of 1 September 2021) is available on [Optimization Online](http://www.optimization-online.org/DB_FILE/2020/07/7881.pdf). The paper is presented at [Robust Optimization Webinars](https://youtu.be/GEGUlTXfVX0), at [Imperial-LBS-UCL Brown Bag Seminars](https://sites.google.com/view/phdmsorseminars/), and at the 2022 [INFORMS Computing Society Conference](https://ics2022tampa.eng.usf.edu/).
 Aras received the [2021 ICS Best Student Paper Award](https://connect.informs.org/computing/awards/ics-student-paper-award) with this paper.
 
 Update: On 9 September 2021, this paper is accepted for a publication in _INFORMS Journal on Computing_. 
