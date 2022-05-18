@@ -113,11 +113,12 @@ The following scripts are also available upon request:
 ## Thank You
 Thank you for your interest in our work. If you found this work useful in your research and/or applications, please star this repository and cite:
 ```
-@article{selvi2020convex,
+@article{selvi2022convex,
   title={Convex maximization via adjustable robust optimization},
   author={Selvi, Aras and Ben-Tal, Aharon and Brekelmans, Ruud and den Hertog, Dick},
-  journal={Available on Optimization Online},
-  year={2020}
+  journal={INFORMS Journal on Computing},
+  year={2022},
+  publisher={INFORMS}
 }
 ```
 Please contact Aras (a.selvi19@imperial.ac.uk) if you encounter any issues using the scripts. For any other comment or question, please do not hesitate to contact us:
